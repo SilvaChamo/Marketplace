@@ -8,11 +8,12 @@ import Categories from './components/Categories';
 import JoinSection from './components/JoinSection';
 import WhyChooseUs from './components/WhyChooseUs';
 import PricingSection from './components/PricingSection';
+import AboutSection from './components/AboutSection';
 import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-50 selection:bg-orange-100 selection:text-orange-900">
+    <div className="min-h-screen bg-gray-50 selection:bg-orange-100 selection:text-orange-900 scroll-smooth">
       <Navbar />
       
       <main>
@@ -22,19 +23,22 @@ function App() {
         {/* Slider de Empresas em Destaque */}
         <FeaturedSlider />
 
-        {/* Secção de Publicidade Outdoor */}
-        <AdSection />
-
         {/* Categorias Segmentadas */}
         <Categories />
 
-        {/* Secção Faça Parte */}
+        {/* Secção de Publicidade Outdoor */}
+        <AdSection />
+
+        {/* Secção Faça Parte / Call to Action */}
         <JoinSection />
 
         {/* Porquê escolher a Mozconect */}
         <WhyChooseUs />
 
-        {/* NOVO: Planos e Preços em Meticais */}
+        {/* Sobre Nós / Institucional */}
+        <AboutSection />
+
+        {/* Planos e Preços */}
         <PricingSection />
       </main>
 

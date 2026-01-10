@@ -20,8 +20,8 @@ const SLIDES = [
     image: 'https://images.unsplash.com/photo-1504384308090-c89eecaaad8e?auto=format&fit=crop&q=80&w=2000',
     video: 'https://assets.mixkit.co/videos/preview/mixkit-creative-team-working-on-a-project-4444-large.mp4',
     antetitle: 'MARKETPLACE',
-    title: 'A maior plataforma empresarial em',
-    highlight: 'Moçambique'
+    title: 'A maior plataforma empresarial',
+    highlight: 'em Moçambique'
   }
 ];
 
@@ -68,29 +68,30 @@ const Hero: React.FC = () => {
       ))}
 
       {/* Content Overlay */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 z-10">
-        <div className="max-w-4xl w-full flex flex-col items-center">
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-10 md:px-20 z-10">
+        {/* max-w-5xl e o padding forçam a estrutura de 2 linhas conforme solicitado */}
+        <div className="max-w-5xl w-full flex flex-col items-center px-6 md:px-12">
           
-          {/* Antetítulo H4 (Customizado por Slide) */}
-          <h4 className="text-orange-500 text-sm md:text-base font-black uppercase tracking-[0.4em] mb-4 drop-shadow-md animate-fade-in">
+          {/* Antetítulo H4 */}
+          <h4 className="text-orange-500 text-sm md:text-base font-black uppercase tracking-[0.4em] mb-6 drop-shadow-md animate-fade-in">
             {SLIDES[currentIndex].antetitle}
           </h4>
 
-          {/* Título com duas linhas obrigatórias */}
-          <h1 className="text-white text-3xl md:text-5xl lg:text-6xl font-black drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)] leading-tight mb-10 transition-all duration-1000">
+          {/* Título com duas linhas e espaçamento otimizado */}
+          <h1 className="text-white text-4xl md:text-6xl lg:text-7xl font-black drop-shadow-[0_10px_10px_rgba(0,0,0,0.5)] leading-[1.1] mb-12 transition-all duration-1000 tracking-tighter">
             {SLIDES[currentIndex].title}
             <br />
-            <span className="text-orange-500 tracking-tight">
+            <span className="text-orange-500">
               {SLIDES[currentIndex].highlight}
             </span>
           </h1>
 
           {/* Ações */}
-          <div className="flex flex-col sm:flex-row gap-5 items-center">
-            <button className="bg-orange-600 hover:bg-orange-700 text-white px-10 py-4 rounded-2xl font-black text-lg transition-all shadow-2xl shadow-orange-900/40 active:scale-95 border-b-4 border-orange-800">
+          <div className="flex flex-col sm:flex-row gap-6 items-center">
+            <button className="bg-orange-600 hover:bg-orange-700 text-white px-12 py-5 rounded-2xl font-black text-xl transition-all shadow-2xl shadow-orange-900/40 active:scale-95 border-b-4 border-orange-800">
               Anunciar Agora
             </button>
-            <button className="bg-white/10 hover:bg-white/20 text-white backdrop-blur-xl border border-white/30 px-10 py-4 rounded-2xl font-black text-lg transition-all hover:border-white/60">
+            <button className="bg-white/10 hover:bg-white/20 text-white backdrop-blur-xl border border-white/30 px-12 py-5 rounded-2xl font-black text-xl transition-all hover:border-white/60">
               Ver Categorias
             </button>
           </div>
@@ -104,7 +105,7 @@ const Hero: React.FC = () => {
             key={i}
             onClick={() => setCurrentIndex(i)}
             className={`group relative h-1.5 rounded-full transition-all duration-500 overflow-hidden ${
-              i === currentIndex ? 'w-16 bg-white/20' : 'w-3 bg-white/40'
+              i === currentIndex ? 'w-20 bg-white/20' : 'w-4 bg-white/40'
             }`}
           >
              {i === currentIndex && (
@@ -116,7 +117,7 @@ const Hero: React.FC = () => {
 
       <style>{`
         @keyframes fade-in {
-          from { opacity: 0; transform: translateY(-10px); }
+          from { opacity: 0; transform: translateY(-20px); }
           to { opacity: 1; transform: translateY(0); }
         }
         @keyframes progress {
