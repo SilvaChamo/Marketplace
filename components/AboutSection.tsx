@@ -25,9 +25,9 @@ const AboutSection: React.FC<AboutSectionProps> = ({ onBack }) => {
           )}
 
           <div className="max-w-4xl mb-20">
-            <span className="text-orange-600 font-black uppercase tracking-[0.4em] text-xs block mb-4">A Nossa História</span>
-            <h2 className="text-5xl md:text-7xl font-black text-gray-900 leading-[1] tracking-tighter">
-              A maior ponte entre <br /> <span className="text-orange-600">Empresas e Moçambique.</span>
+            <span className="text-orange-600 font-black uppercase tracking-[0.4em] text-xs block mb-4">A Nossa Jornada</span>
+            <h2 className="text-5xl md:text-6xl font-black text-gray-900 leading-[1.1] tracking-tighter">
+              Construindo a infraestrutura digital <br /> <span className="text-orange-600">para o comércio moçambicano.</span>
             </h2>
           </div>
 
@@ -37,33 +37,33 @@ const AboutSection: React.FC<AboutSectionProps> = ({ onBack }) => {
                 <img 
                   src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=1200" 
                   alt="Trabalho de Equipa" 
-                  className="rounded-[3rem] shadow-2xl"
+                  className="rounded-3xl shadow-2xl"
                 />
-                <div className="absolute -bottom-10 -right-10 bg-white p-8 rounded-[2.5rem] shadow-2xl hidden md:block border border-gray-100">
+                <div className="absolute -bottom-8 -right-8 bg-white p-8 rounded-2xl shadow-2xl hidden md:block border border-gray-100">
                   <div className="flex flex-col">
                     <span className="text-5xl font-black text-orange-600 tracking-tighter">100%</span>
-                    <span className="text-gray-500 font-bold uppercase text-[10px] tracking-widest mt-1">Nacional</span>
+                    <span className="text-gray-400 font-black uppercase text-[9px] tracking-[0.2em] mt-2">Foco Nacional</span>
                   </div>
                 </div>
               </div>
             </div>
             <div className="w-full lg:w-1/2 space-y-10">
-              <p className="text-2xl text-gray-700 leading-relaxed font-medium">
-                Não somos apenas um site. Somos o motor digital que impulsiona o empreendedorismo local.
+              <p className="text-2xl text-gray-800 leading-relaxed font-bold tracking-tight">
+                Mais do que um diretório, somos o ecossistema que formaliza e potencializa a presença online de marcas moçambicanas.
               </p>
               <p className="text-gray-500 leading-relaxed text-lg">
-                O Marketplace nasceu de uma visão clara: digitalizar Moçambique, uma empresa de cada vez. Proporcionamos as ferramentas para que o seu negócio seja encontrado por quem realmente importa.
+                O Marketplace nasceu da necessidade crítica de conectar o talento empresarial local com um público cada vez mais digitalizado. Desde pequenos varejistas até grandes indústrias, nossa missão é democratizar o acesso às ferramentas de marketing de alto nível, permitindo que o mérito do produto seja o único fator determinante para o sucesso.
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="p-8 bg-gray-50 rounded-[2rem] border border-gray-100">
-                  <div className="text-4xl mb-4">👁️</div>
-                  <h4 className="text-gray-900 font-black mb-2 text-xl">Visão</h4>
-                  <p className="text-gray-500 text-sm leading-relaxed">Ser a primeira escolha de busca comercial no país.</p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="p-8 bg-gray-50 rounded-2xl border border-gray-100">
+                  <div className="text-4xl mb-5">👁️</div>
+                  <h4 className="text-gray-900 font-black mb-3 text-lg">Visão 2030</h4>
+                  <p className="text-gray-500 text-sm leading-relaxed">Tornar-nos a espinha dorsal do comércio eletrônico em Moçambique, integrando buscas, pagamentos e logística num só local.</p>
                 </div>
-                <div className="p-8 bg-gray-50 rounded-[2rem] border border-gray-100">
-                  <div className="text-4xl mb-4">💡</div>
-                  <h4 className="text-gray-900 font-black mb-2 text-xl">Inovação</h4>
-                  <p className="text-gray-500 text-sm leading-relaxed">Tecnologia de ponta ao serviço do comércio.</p>
+                <div className="p-8 bg-gray-50 rounded-2xl border border-gray-100">
+                  <div className="text-4xl mb-5">💡</div>
+                  <h4 className="text-gray-900 font-black mb-3 text-lg">Inovação Social</h4>
+                  <p className="text-gray-500 text-sm leading-relaxed">Utilizar a tecnologia como ferramenta de inclusão econômica, trazendo visibilidade para negócios de todas as províncias.</p>
                 </div>
               </div>
             </div>
@@ -71,66 +71,62 @@ const AboutSection: React.FC<AboutSectionProps> = ({ onBack }) => {
         </div>
       </section>
 
-      {/* 2. Secção Relaxante: Nossos Serviços Base */}
-      <section className="py-32 bg-orange-50/30">
+      {/* 2. Secção Serviços */}
+      <section className="py-32 bg-orange-50/40">
         <div className="container mx-auto px-6 text-center">
-          <span className="text-gray-400 font-bold uppercase tracking-widest text-[10px] mb-4 block">Excelência em cada detalhe</span>
-          <h3 className="text-3xl md:text-5xl font-black text-gray-900 mb-20 tracking-tight">O que fazemos por si</h3>
+          <span className="text-gray-400 font-black uppercase tracking-widest text-[9px] mb-4 block">Padrão de Excelência</span>
+          <h3 className="text-3xl md:text-5xl font-black text-gray-900 mb-20 tracking-tight">Pilares de Atuação</h3>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
             {[
-              { title: 'Visibilidade Digital', desc: 'Colocamos a sua marca no mapa das pesquisas em Moçambique.', icon: '🌐' },
-              { title: 'Análise de Tráfego', desc: 'Relatórios detalhados sobre quem visita o seu perfil.', icon: '📊' },
-              { title: 'Conexão Direta', desc: 'Integração total com WhatsApp e redes sociais.', icon: '📲' }
+              { title: 'Autoridade Digital', desc: 'Criamos perfis institucionais que transmitem confiança imediata aos seus futuros clientes e parceiros.', icon: '🌐' },
+              { title: 'Inteligência Analítica', desc: 'Transformamos dados complexos de tráfego em insights simples para você tomar melhores decisões de negócio.', icon: '📊' },
+              { title: 'Conversão Direta', desc: 'Pontes de contato otimizadas para que o interesse do cliente se transforme em conversa no WhatsApp em segundos.', icon: '📲' }
             ].map((s, i) => (
               <div key={i} className="group cursor-default">
-                <div className="text-5xl mb-6 transition-transform group-hover:scale-110 duration-500">{s.icon}</div>
-                <h4 className="text-xl font-bold text-gray-900 mb-3">{s.title}</h4>
-                <p className="text-gray-500 max-w-xs mx-auto text-sm leading-relaxed">{s.desc}</p>
+                <div className="text-5xl mb-8 transition-transform group-hover:scale-110 duration-500 drop-shadow-lg">{s.icon}</div>
+                <h4 className="text-xl font-black text-gray-900 mb-4">{s.title}</h4>
+                <p className="text-gray-500 max-w-xs mx-auto text-sm leading-relaxed font-medium">{s.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 3. Secção de Equipa e Cards (Equipe à esquerda, texto/cards à direita) */}
+      {/* 3. Secção de Equipa */}
       <section className="py-32 bg-white">
         <div className="container mx-auto px-6">
-          <div className="flex flex-col lg:flex-row items-center gap-20">
-            {/* Imagem Equipa à Esquerda */}
+          <div className="flex flex-col lg:flex-row items-center gap-24">
             <div className="w-full lg:w-1/2">
               <div className="relative">
                 <img 
                   src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&q=80&w=1200" 
-                  alt="Nossa Equipa Marketplace" 
-                  className="rounded-[3.5rem] shadow-2xl grayscale hover:grayscale-0 transition-all duration-1000"
+                  alt="Equipa Marketplace" 
+                  className="rounded-3xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-1000"
                 />
-                <div className="absolute -top-6 -left-6 w-24 h-24 bg-orange-600 rounded-full mix-blend-multiply opacity-20 animate-pulse"></div>
+                <div className="absolute -top-6 -left-6 w-20 h-20 bg-orange-600 rounded-full mix-blend-multiply opacity-20 animate-pulse"></div>
               </div>
             </div>
 
-            {/* Texto e Cards à Direita */}
             <div className="w-full lg:w-1/2">
-              <div className="mb-12">
-                <h3 className="text-4xl font-black text-gray-900 mb-6 tracking-tight">Gente que entende de gente</h3>
-                <p className="text-gray-500 text-lg leading-relaxed">
-                  A nossa equipa é composta por especialistas apaixonados por tecnologia e marketing, prontos para elevar o seu negócio ao próximo nível.
+              <div className="mb-14">
+                <h3 className="text-4xl font-black text-gray-900 mb-6 tracking-tight">Talento local, visão global</h3>
+                <p className="text-gray-500 text-lg leading-relaxed font-medium">
+                  Nossa equipe é formada por estrategistas, designers e engenheiros que conhecem profundamente as particularidades do mercado de Maputo a Pemba. Combinamos esse "saber local" com as melhores práticas tecnológicas globais.
                 </p>
               </div>
 
               <div className="space-y-6">
-                {/* Card Superior */}
-                <div className="p-8 bg-gray-900 rounded-[2.5rem] shadow-xl transform hover:-translate-y-1 transition-all duration-300">
-                  <h4 className="text-orange-500 font-black text-xl mb-3">Cultura de Resultados</h4>
+                <div className="p-8 bg-gray-900 rounded-2xl shadow-xl transform hover:-translate-y-1 transition-all duration-300 border border-gray-800">
+                  <h4 className="text-orange-500 font-black text-xl mb-4">Cultura de Hipercrescimento</h4>
                   <p className="text-gray-400 text-sm leading-relaxed">
-                    Não focamos apenas em métricas de vaidade. O nosso objetivo é garantir que cada clique se transforme numa oportunidade real de venda para si.
+                    Não entregamos apenas "likes". Focamos em ROI (Retorno sobre Investimento). Desenvolvemos estratégias que garantem que sua presença em nossa plataforma se pague rapidamente através de novos contratos fechados.
                   </p>
                 </div>
-                {/* Card Inferior */}
-                <div className="p-8 bg-orange-600 rounded-[2.5rem] shadow-xl transform hover:-translate-y-1 transition-all duration-300">
-                  <h4 className="text-white font-black text-xl mb-3">Compromisso Local</h4>
-                  <p className="text-orange-100 text-sm leading-relaxed">
-                    Conhecemos cada província e cada mercado. Adaptamos as nossas estratégias à realidade moçambicana, garantindo relevância cultural.
+                <div className="p-8 bg-orange-600 rounded-2xl shadow-xl transform hover:-translate-y-1 transition-all duration-300 border border-orange-500">
+                  <h4 className="text-white font-black text-xl mb-4">Ética e Transparência</h4>
+                  <p className="text-orange-50 text-sm leading-relaxed">
+                    Valorizamos parcerias de longo prazo. Todos os nossos processos de publicidade e indexação são transparentes, garantindo que você entenda exatamente onde seu investimento está gerando mais valor.
                   </p>
                 </div>
               </div>
@@ -139,24 +135,26 @@ const AboutSection: React.FC<AboutSectionProps> = ({ onBack }) => {
         </div>
       </section>
 
-      {/* 4. Secção Relaxante Final: Serviços de Apoio */}
-      <section className="py-32 bg-blue-50/40 relative">
+      {/* 4. Secção Final */}
+      <section className="py-32 bg-slate-50 relative">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-20">
-            <h3 className="text-3xl md:text-5xl font-black text-gray-900 mb-6 tracking-tight">Apoio que nunca para</h3>
-            <p className="text-gray-500">O Marketplace oferece uma gama de serviços especializados para garantir o seu sucesso digital.</p>
+            <span className="text-orange-600 font-black uppercase tracking-widest text-[9px] mb-4 block">Suporte Especializado</span>
+            <h3 className="text-3xl md:text-5xl font-black text-gray-900 mb-8 tracking-tight">Apoio operacional completo</h3>
+            <p className="text-gray-500 text-lg font-medium leading-relaxed">O Marketplace oferece serviços complementares para garantir que sua presença digital seja impecável desde o primeiro dia de ativação.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { title: 'Fotografia Profissional', icon: '📸' },
-              { title: 'Redação Criativa', icon: '✍️' },
-              { title: 'Estratégia Social', icon: '📢' },
-              { title: 'SEO Especializado', icon: '🚀' }
+              { title: 'Sessões de Fotos', desc: 'Produção visual profissional para seus produtos e sede.', icon: '📸' },
+              { title: 'Copywriting VIP', desc: 'Textos persuasivos escritos por especialistas em vendas.', icon: '✍️' },
+              { title: 'Gestão de Anúncios', desc: 'Campanhas patrocinadas dentro e fora da plataforma.', icon: '📢' },
+              { title: 'Google My Business', desc: 'Otimização completa do seu perfil geográfico externo.', icon: '🚀' }
             ].map((item, i) => (
-              <div key={i} className="bg-white p-10 rounded-[2rem] text-center border border-blue-100/50 hover:shadow-xl transition-all group">
-                <div className="text-4xl mb-4 group-hover:rotate-12 transition-transform">{item.icon}</div>
-                <h5 className="font-bold text-gray-800">{item.title}</h5>
+              <div key={i} className="bg-white p-8 rounded-2xl text-center border border-gray-100 hover:shadow-2xl hover:border-orange-200 transition-all group">
+                <div className="text-4xl mb-5 group-hover:rotate-12 transition-transform">{item.icon}</div>
+                <h5 className="font-black text-gray-900 mb-3">{item.title}</h5>
+                <p className="text-gray-400 text-[11px] leading-relaxed font-medium">{item.desc}</p>
               </div>
             ))}
           </div>

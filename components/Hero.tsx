@@ -69,29 +69,29 @@ const Hero: React.FC = () => {
 
       {/* Content Overlay */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-10 md:px-20 z-10">
-        {/* max-w-5xl e o padding forçam a estrutura de 2 linhas conforme solicitado */}
-        <div className="max-w-5xl w-full flex flex-col items-center px-6 md:px-12">
+        <div className="max-w-4xl w-full flex flex-col items-center px-6 md:px-12">
           
-          {/* Antetítulo H4 */}
-          <h4 className="text-orange-500 text-sm md:text-base font-black uppercase tracking-[0.4em] mb-6 drop-shadow-md animate-fade-in">
+          {/* Antetítulo sutil */}
+          <h4 className="text-orange-500 text-[10px] md:text-xs font-black uppercase tracking-[0.5em] mb-5 drop-shadow-md animate-fade-in">
             {SLIDES[currentIndex].antetitle}
           </h4>
 
-          {/* Título com duas linhas e espaçamento otimizado */}
-          <h1 className="text-white text-4xl md:text-6xl lg:text-7xl font-black drop-shadow-[0_10px_10px_rgba(0,0,0,0.5)] leading-[1.1] mb-12 transition-all duration-1000 tracking-tighter">
-            {SLIDES[currentIndex].title}
-            <br />
-            <span className="text-orange-500">
+          {/* Título Principal Padronizado como H3 (text-3xl a 5xl) em Duas Linhas */}
+          <h3 className="text-white text-3xl md:text-4xl lg:text-5xl font-black drop-shadow-[0_8px_20px_rgba(0,0,0,0.6)] leading-[1.15] mb-12 transition-all duration-1000 tracking-tighter">
+            <span className="block mb-2">
+              {SLIDES[currentIndex].title}
+            </span>
+            <span className="text-orange-500 block">
               {SLIDES[currentIndex].highlight}
             </span>
-          </h1>
+          </h3>
 
           {/* Ações */}
-          <div className="flex flex-col sm:flex-row gap-6 items-center">
-            <button className="bg-orange-600 hover:bg-orange-700 text-white px-12 py-5 rounded-2xl font-black text-xl transition-all shadow-2xl shadow-orange-900/40 active:scale-95 border-b-4 border-orange-800">
+          <div className="flex flex-col sm:flex-row gap-5 items-center">
+            <button className="bg-orange-600 hover:bg-orange-700 text-white px-10 py-4 rounded-2xl font-black text-base transition-all shadow-2xl shadow-orange-900/40 active:scale-95 border-b-4 border-orange-800">
               Anunciar Agora
             </button>
-            <button className="bg-white/10 hover:bg-white/20 text-white backdrop-blur-xl border border-white/30 px-12 py-5 rounded-2xl font-black text-xl transition-all hover:border-white/60">
+            <button className="bg-white/10 hover:bg-white/20 text-white backdrop-blur-xl border border-white/30 px-10 py-4 rounded-2xl font-black text-base transition-all hover:border-white/60">
               Ver Categorias
             </button>
           </div>
@@ -105,7 +105,7 @@ const Hero: React.FC = () => {
             key={i}
             onClick={() => setCurrentIndex(i)}
             className={`group relative h-1.5 rounded-full transition-all duration-500 overflow-hidden ${
-              i === currentIndex ? 'w-20 bg-white/20' : 'w-4 bg-white/40'
+              i === currentIndex ? 'w-14 bg-white/20' : 'w-2.5 bg-white/40'
             }`}
           >
              {i === currentIndex && (

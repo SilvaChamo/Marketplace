@@ -100,7 +100,7 @@ const FeaturedSlider: React.FC = () => {
   return (
     <section className="py-20 bg-gray-50 overflow-hidden">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-6">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-5 gap-6">
           <div>
             <span className="text-orange-600 font-bold uppercase tracking-widest text-[10px]">Parceiros Premium</span>
             <h2 className="text-3xl md:text-4xl font-black text-gray-900 mt-2 tracking-tight">Destaques da Semana</h2>
@@ -116,7 +116,7 @@ const FeaturedSlider: React.FC = () => {
         </div>
         <div ref={scrollRef} onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)} className="flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-8 px-2 -mx-2" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
           {EXTENDED_BUSINESSES.map((biz, index) => (
-            <div key={`${biz.id}-${index}`} className="relative min-w-[260px] md:min-w-[calc(25%-18px)] aspect-square overflow-hidden group cursor-pointer shadow-xl hover:shadow-2xl hover:shadow-orange-500/10 transition-all duration-700 bg-white rounded-[1.5rem] snap-start">
+            <div key={`${biz.id}-${index}`} className="relative min-w-[260px] md:min-w-[calc(25%-18px)] aspect-square overflow-hidden group cursor-pointer shadow-xl hover:shadow-2xl hover:shadow-orange-500/10 transition-all duration-700 bg-white rounded-2xl snap-start">
               <img src={biz.image} alt={biz.name} className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500"></div>
               <div className="absolute top-4 right-4 z-30 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-x-4 group-hover:translate-x-0">

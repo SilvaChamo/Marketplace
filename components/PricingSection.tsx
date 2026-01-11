@@ -12,9 +12,9 @@ const PricingSection: React.FC = () => {
   return (
     <section id="pricing" className="relative py-24 overflow-hidden bg-gray-200">
       <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4 tracking-tight">Planos e Investimentos</h2>
-          <p className="text-gray-600 mb-8 max-w-xl mx-auto font-medium text-base">Escolha o nível de visibilidade ideal para o seu negócio.</p>
+        <div className="text-center mb-5">
+          <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-2 tracking-tight">Planos e Investimentos</h2>
+          <p className="text-gray-600 mb-4 max-w-xl mx-auto font-medium text-sm leading-relaxed">Escolha o nível de visibilidade ideal para o seu negócio.</p>
           <div className="flex items-center justify-center gap-4">
             <div className="bg-white p-1 rounded-2xl flex items-center relative w-60 h-12 border border-gray-300 shadow-sm">
               <button onClick={() => setIsAnnual(true)} className={`relative z-10 flex-1 h-full rounded-xl text-[9px] font-black uppercase tracking-widest transition-all duration-300 flex items-center justify-center gap-1 ${isAnnual ? 'text-gray-900' : 'text-gray-400'}`}>
@@ -29,7 +29,7 @@ const PricingSection: React.FC = () => {
           {plans.map((plan, index) => (
             <div 
               key={index} 
-              className={`relative bg-white rounded-[2rem] pt-8 px-8 pb-8 transition-all duration-700 hover:shadow-2xl flex flex-col transform 
+              className={`relative bg-white rounded-2xl pt-8 px-8 pb-8 transition-all duration-700 hover:shadow-2xl flex flex-col transform 
                 ${plan.isPopular 
                   ? 'ring-4 ring-orange-500 shadow-2xl scale-105 z-10' 
                   : 'border border-gray-100 shadow-xl opacity-95'
@@ -38,7 +38,7 @@ const PricingSection: React.FC = () => {
               {plan.isPopular && (<div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-orange-600 to-red-600 text-white px-5 py-1.5 rounded-full text-[9px] font-black uppercase tracking-widest shadow-xl">MAIS ESCOLHIDO</div>)}
               <div className="mb-6">
                 <h3 className="text-xl font-black text-gray-900 uppercase tracking-tighter mb-1">{plan.name}</h3>
-                <p className="text-gray-500 text-sm font-medium mb-4">{plan.description}</p>
+                <p className="text-gray-500 text-xs font-medium mb-4">{plan.description}</p>
                 <div className="flex items-baseline gap-1">
                   <span className="text-sm font-bold text-gray-400">MT</span>
                   <span className="text-4xl font-black text-gray-900 tracking-tighter">{isAnnual ? Math.floor(plan.annualPrice / 12).toLocaleString() : plan.monthlyPrice.toLocaleString()}</span>

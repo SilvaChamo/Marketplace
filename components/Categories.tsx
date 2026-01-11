@@ -6,13 +6,13 @@ const Categories: React.FC = () => {
   return (
     <section id="categories" className="py-24 bg-white">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-5 gap-6">
           <div className="max-w-2xl">
             <span className="text-orange-600 font-black uppercase tracking-[0.3em] text-xs">Diretório Profissional</span>
             <h2 className="text-4xl md:text-5xl font-black text-gray-900 mt-4 leading-tight tracking-tight">
               Explore por Categorias
             </h2>
-            <p className="text-gray-500 mt-4 text-lg">
+            <p className="text-gray-500 mt-4 text-base font-medium">
               Conecte-se com fornecedores e serviços verificados em todo o território nacional.
             </p>
           </div>
@@ -23,7 +23,7 @@ const Categories: React.FC = () => {
         
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
           {CATEGORIES.map((cat) => (
-            <div key={cat.id} className="relative group aspect-square overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer rounded-[1.5rem]">
+            <div key={cat.id} className="relative group aspect-square overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer rounded-2xl">
               <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style={{ backgroundImage: `url(${cat.image})` }} />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10 group-hover:from-orange-950/90 transition-colors duration-500"></div>
               <div className="relative h-full p-8 flex flex-col justify-end">
