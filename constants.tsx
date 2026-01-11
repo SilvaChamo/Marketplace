@@ -5,10 +5,10 @@ import { Category } from './types';
 export const CATEGORIES: Category[] = [
   { 
     id: '1', 
-    name: 'Lojas de Varejo', 
+    name: 'Comércio Geral', 
     icon: '🛍️', 
     count: 150,
-    image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=800'
+    image: 'https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?auto=format&fit=crop&q=80&w=800'
   },
   { 
     id: '2', 

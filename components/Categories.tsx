@@ -2,7 +2,11 @@
 import React from 'react';
 import { CATEGORIES } from '../constants';
 
-const Categories: React.FC = () => {
+interface CategoriesProps {
+  onSeeAll: () => void;
+}
+
+const Categories: React.FC<CategoriesProps> = ({ onSeeAll }) => {
   return (
     <section id="categories" className="py-24 bg-white">
       <div className="container mx-auto px-6">
@@ -16,13 +20,16 @@ const Categories: React.FC = () => {
               Conecte-se com fornecedores e serviços verificados em todo o território nacional.
             </p>
           </div>
-          <button className="hidden md:block bg-gray-100 hover:bg-gray-200 text-gray-900 px-8 py-3 rounded-xl font-bold transition-all">
+          <button 
+            onClick={onSeeAll}
+            className="hidden md:block bg-gray-100 hover:bg-gray-200 text-gray-900 px-8 py-3 rounded-xl font-bold transition-all"
+          >
             Ver Tudo
           </button>
         </div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-          {CATEGORIES.map((cat) => (
+          {CATEGORIES.slice(0, 8).map((cat) => (
             <div key={cat.id} className="relative group aspect-square overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer rounded-2xl">
               <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style={{ backgroundImage: `url(${cat.image})` }} />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10 group-hover:from-orange-950/90 transition-colors duration-500"></div>

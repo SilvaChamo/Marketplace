@@ -1,7 +1,11 @@
 
 import React from 'react';
 
-const AdSection: React.FC = () => {
+interface AdSectionProps {
+  onOpenRegister: () => void;
+}
+
+const AdSection: React.FC<AdSectionProps> = ({ onOpenRegister }) => {
   return (
     <section id="advertise" className="relative py-24 overflow-hidden bg-gray-200">
       <div className="container mx-auto px-6 relative z-10">
@@ -15,7 +19,7 @@ const AdSection: React.FC = () => {
                 Destaque sua Marca nas <span className="text-orange-600 whitespace-nowrap">Maiores Avenidas</span>
               </h2>
             </div>
-            <p className="text-gray-600 text-lg leading-relaxed font-medium">
+            <p className="text-gray-600 text-sm font-medium mb-5 leading-relaxed max-w-xl">
               Impacte milhares de moçambicanos diariamente com outdoors estrategicamente localizados.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -31,13 +35,16 @@ const AdSection: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="font-bold text-gray-900 text-sm uppercase tracking-tight">{item.title}</h4>
-                    <p className="text-gray-500 text-xs leading-snug">{item.desc}</p>
+                    <p className="text-gray-500 text-[10px] font-medium leading-snug">{item.desc}</p>
                   </div>
                 </div>
               ))}
             </div>
             <div className="pt-2">
-              <button className="bg-orange-600 hover:bg-orange-700 text-white px-10 py-4 rounded-xl font-black text-base uppercase tracking-widest transition-all shadow-xl shadow-orange-900/20 active:scale-95">
+              <button 
+                onClick={onOpenRegister}
+                className="bg-orange-600 hover:bg-orange-700 text-white px-10 py-4 rounded-xl font-black text-base uppercase tracking-widest transition-all shadow-xl shadow-orange-900/20 active:scale-95"
+              >
                 Consultar Disponibilidade
               </button>
             </div>

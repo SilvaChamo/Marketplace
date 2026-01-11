@@ -1,7 +1,11 @@
 
 import React from 'react';
 
-const JoinSection: React.FC = () => {
+interface JoinSectionProps {
+  onOpenRegister: () => void;
+}
+
+const JoinSection: React.FC<JoinSectionProps> = ({ onOpenRegister }) => {
   return (
     <section id="advertise" className="relative py-[15vh] overflow-hidden">
       <div className="absolute inset-0 z-0">
@@ -11,11 +15,10 @@ const JoinSection: React.FC = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col lg:flex-row-reverse items-center gap-12">
           
-          {/* Lado Direito: Conteúdo de Texto */}
           <div className="w-full lg:w-1/2">
             <span className="inline-block px-4 py-1.5 bg-white/10 backdrop-blur-md rounded-full text-white text-[10px] font-black tracking-[0.3em] uppercase mb-6 border border-white/20">Expansão Comercial</span>
             <h2 className="text-4xl md:text-5xl font-black text-white mb-6 leading-tight tracking-tighter">Posicione sua marca na maior vitrine empresarial de Moçambique</h2>
-            <p className="text-lg text-orange-50/90 mb-10 leading-relaxed font-medium">
+            <p className="text-sm font-medium text-orange-50/90 mb-5 leading-relaxed">
               Não permita que sua empresa fique invisível no ambiente digital. Nossa plataforma processa milhares de intenções de compra mensalmente, conectando diretamente quem produz com quem consome em todas as províncias.
             </p>
             <div className="grid md:grid-cols-2 gap-8 mb-12">
@@ -25,7 +28,7 @@ const JoinSection: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="text-white font-black text-lg mb-2">Escalabilidade de Vendas</h4>
-                  <p className="text-orange-100/60 text-xs leading-relaxed">Implementamos algoritmos de recomendação que sugerem seu serviço para clientes com alto potencial de conversão baseado em histórico de busca.</p>
+                  <p className="text-orange-100/60 text-[10px] font-medium leading-relaxed">Implementamos algoritmos de recomendação que sugerem seu serviço para clientes com alto potencial de conversão.</p>
                 </div>
               </div>
               <div className="flex gap-4 items-start">
@@ -34,14 +37,18 @@ const JoinSection: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="text-white font-black text-lg mb-2">Geolocalização Estratégica</h4>
-                  <p className="text-orange-100/60 text-xs leading-relaxed">Utilizamos inteligência geográfica para garantir que sua empresa apareça com prioridade para usuários em Maputo, Beira e Nampula no momento exato da necessidade.</p>
+                  <p className="text-orange-100/60 text-[10px] font-medium leading-relaxed">Garantimos que sua empresa apareça com prioridade para usuários em sua localidade no momento exato da necessidade.</p>
                 </div>
               </div>
             </div>
-            <button className="bg-orange-600 text-white hover:bg-orange-500 px-10 py-5 rounded-xl font-black text-lg transition-all shadow-2xl hover:scale-[1.02] active:scale-95 border-b-4 border-orange-800">Cadastrar Empresa Agora</button>
+            <button 
+              onClick={onOpenRegister}
+              className="bg-orange-600 text-white hover:bg-orange-500 px-10 py-5 rounded-xl font-black text-lg transition-all shadow-2xl hover:scale-[1.02] active:scale-95 border-b-4 border-orange-800"
+            >
+              Cadastrar Empresa Agora
+            </button>
           </div>
 
-          {/* Lado Esquerdo: Card com Imagem e Estatísticas */}
           <div className="w-full lg:w-1/2 flex justify-center lg:justify-start">
             <div className="bg-white rounded-3xl p-6 w-full max-w-2xl shadow-2xl relative overflow-hidden group">
               <div className="rounded-2xl overflow-hidden aspect-[16/10] mb-8 shadow-inner border border-gray-100">
@@ -68,10 +75,8 @@ const JoinSection: React.FC = () => {
                   <div className="text-gray-400 text-[9px] font-black uppercase tracking-widest">Monitoramento</div>
                 </div>
               </div>
-              <p className="text-[11px] text-gray-400 mt-6 text-center italic font-medium">"A plataforma Marketplace revolucionou a forma como recebemos orçamentos mensais de novos parceiros corporativos."</p>
             </div>
           </div>
-
         </div>
       </div>
     </section>

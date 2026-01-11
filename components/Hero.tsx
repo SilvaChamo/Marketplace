@@ -1,6 +1,11 @@
 
 import React, { useState, useEffect } from 'react';
 
+interface HeroProps {
+  onOpenRegister: () => void;
+  onSeeCategories: () => void;
+}
+
 const SLIDES = [
   {
     image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=2000',
@@ -25,7 +30,7 @@ const SLIDES = [
   }
 ];
 
-const Hero: React.FC = () => {
+const Hero: React.FC<HeroProps> = ({ onOpenRegister, onSeeCategories }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -37,7 +42,6 @@ const Hero: React.FC = () => {
 
   return (
     <section className="relative h-screen w-full overflow-hidden bg-black">
-      {/* Background Layers */}
       {SLIDES.map((slide, index) => (
         <div 
           key={index}
@@ -45,16 +49,13 @@ const Hero: React.FC = () => {
             index === currentIndex ? 'opacity-100' : 'opacity-0'
           }`}
         >
-          {/* Imagem de Fundo Estática */}
           <div 
             className="absolute inset-0 bg-cover bg-center scale-105"
             style={{ backgroundImage: `url(${slide.image})` }}
           >
-            {/* Overlay Escuro */}
             <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px]"></div>
           </div>
 
-          {/* Vídeo Dinâmico */}
           <video
             autoPlay
             muted
@@ -67,16 +68,13 @@ const Hero: React.FC = () => {
         </div>
       ))}
 
-      {/* Content Overlay */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-10 md:px-20 z-10">
         <div className="max-w-4xl w-full flex flex-col items-center px-6 md:px-12">
           
-          {/* Antetítulo sutil */}
           <h4 className="text-orange-500 text-[10px] md:text-xs font-black uppercase tracking-[0.5em] mb-5 drop-shadow-md animate-fade-in">
             {SLIDES[currentIndex].antetitle}
           </h4>
 
-          {/* Título Principal Padronizado como H3 (text-3xl a 5xl) em Duas Linhas */}
           <h3 className="text-white text-3xl md:text-4xl lg:text-5xl font-black drop-shadow-[0_8px_20px_rgba(0,0,0,0.6)] leading-[1.15] mb-12 transition-all duration-1000 tracking-tighter">
             <span className="block mb-2">
               {SLIDES[currentIndex].title}
@@ -86,19 +84,23 @@ const Hero: React.FC = () => {
             </span>
           </h3>
 
-          {/* Ações */}
           <div className="flex flex-col sm:flex-row gap-5 items-center">
-            <button className="bg-orange-600 hover:bg-orange-700 text-white px-10 py-4 rounded-2xl font-black text-base transition-all shadow-2xl shadow-orange-900/40 active:scale-95 border-b-4 border-orange-800">
+            <button 
+              onClick={onOpenRegister}
+              className="bg-orange-600 hover:bg-orange-700 text-white px-10 py-4 rounded-2xl font-black text-base transition-all shadow-2xl shadow-orange-900/40 active:scale-95 border-b-4 border-orange-800"
+            >
               Anunciar Agora
             </button>
-            <button className="bg-white/10 hover:bg-white/20 text-white backdrop-blur-xl border border-white/30 px-10 py-4 rounded-2xl font-black text-base transition-all hover:border-white/60">
+            <button 
+              onClick={onSeeCategories}
+              className="bg-white/10 hover:bg-white/20 text-white backdrop-blur-xl border border-white/30 px-10 py-4 rounded-2xl font-black text-base transition-all hover:border-white/60"
+            >
               Ver Categorias
             </button>
           </div>
         </div>
       </div>
 
-      {/* Indicadores de Progresso */}
       <div className="absolute bottom-16 left-1/2 -translate-x-1/2 flex gap-4 z-20">
         {SLIDES.map((_, i) => (
           <button
