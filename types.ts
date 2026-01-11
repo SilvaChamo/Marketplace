@@ -5,6 +5,7 @@ export interface Category {
   icon: string;
   count: number;
   image?: string;
+  description: string;
 }
 
 export interface Business {
