@@ -12,13 +12,14 @@ import AboutSection from './components/AboutSection';
 import CategoriesPage from './components/CategoriesPage';
 import CategoryDetailPage from './components/CategoryDetailPage';
 import BusinessProfilePage from './components/BusinessProfilePage';
+import AdvertisePage from './components/AdvertisePage';
 import Footer from './components/Footer';
 import RegisterModal from './components/RegisterModal';
 import QuoteModal from './components/QuoteModal';
 import { Category } from './types';
 
 function App() {
-  const [currentPage, setCurrentPage] = useState<'home' | 'about' | 'all-categories' | 'category-detail' | 'business-profile'>('home');
+  const [currentPage, setCurrentPage] = useState<'home' | 'about' | 'all-categories' | 'category-detail' | 'business-profile' | 'advertise'>('home');
   const [selectedCategory, setSelectedCategory] = useState<Category | null>(null);
   const [selectedBusiness, setSelectedBusiness] = useState<any>(null);
   const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
@@ -44,10 +45,14 @@ function App() {
     setCurrentPage('business-profile');
   };
 
+  const handleNavigate = (page: any) => {
+    setCurrentPage(page);
+  };
+
   return (
     <div className="min-h-screen bg-gray-50 selection:bg-orange-100 selection:text-orange-900 scroll-smooth">
       <Navbar 
-        onNavigate={(page: any) => setCurrentPage(page)} 
+        onNavigate={handleNavigate} 
         currentPage={currentPage}
         onOpenRegister={openRegister}
       />
@@ -72,6 +77,14 @@ function App() {
           <div>
             <AboutSection onBack={() => setCurrentPage('home')} />
           </div>
+        )}
+
+        {currentPage === 'advertise' && (
+          <AdvertisePage 
+            onBack={() => setCurrentPage('home')} 
+            onOpenRegister={openRegister} 
+            onViewAllCategories={() => setCurrentPage('all-categories')}
+          />
         )}
 
         {currentPage === 'all-categories' && (
@@ -106,7 +119,7 @@ function App() {
         )}
       </main>
 
-      <Footer onNavigate={(page: any) => setCurrentPage(page)} />
+      <Footer onNavigate={handleNavigate} />
 
       <RegisterModal 
         isOpen={isRegisterModalOpen} 

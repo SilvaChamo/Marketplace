@@ -12,14 +12,14 @@ interface CategoriesPageProps {
 const CategoriesPage: React.FC<CategoriesPageProps> = ({ onBack, onCategoryClick, onOpenRegister }) => {
   return (
     <div className="animate-in fade-in duration-700 bg-white min-h-screen pb-32">
-      {/* Banner de Topo Ajustado - Tipografia Mini */}
-      <div className="relative h-[45vh] min-h-[350px] overflow-hidden">
+      {/* Banner de Topo - Estilo Mini com Título Atualizado */}
+      <div className="relative h-[40vh] min-h-[300px] overflow-hidden">
         <img 
           src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=2000" 
           className="w-full h-full object-cover" 
-          alt="Diretório de Negócios" 
+          alt="Marketplace" 
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/40 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/20 to-transparent"></div>
         <div className="absolute bottom-10 left-0 right-0">
           <div className="container mx-auto px-6">
             <button 
@@ -29,17 +29,14 @@ const CategoriesPage: React.FC<CategoriesPageProps> = ({ onBack, onCategoryClick
               <svg className="w-4 h-4 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
               </svg>
-              Voltar à Home
+              Voltar
             </button>
             
             <div className="max-w-3xl">
-              <span className="text-orange-500 font-black uppercase tracking-[0.4em] text-[9px] block mb-2">Exploração de Mercado</span>
-              <h2 className="text-3xl md:text-5xl font-black text-white leading-tight tracking-tighter drop-shadow-2xl mb-4">
-                Diretório Completo <br /> <span className="text-orange-500 text-2xl md:text-4xl">de Sectores Moçambicanos</span>
+              <span className="text-orange-500 font-black uppercase tracking-[0.4em] text-[9px] block mb-2">Plataforma Marketplace</span>
+              <h2 className="text-4xl md:text-6xl font-black text-white leading-tight tracking-tighter drop-shadow-2xl mb-6">
+                Diretório Completo
               </h2>
-              <p className="text-white/80 text-xs md:text-sm font-medium leading-relaxed max-w-xl drop-shadow-md mb-8">
-                Navegue pela nossa infraestrutura de negócios e descubra os líderes de mercado em cada sector de actividade em Moçambique.
-              </p>
 
               {/* Botões Ativos */}
               <div className="flex flex-wrap gap-4 items-center">

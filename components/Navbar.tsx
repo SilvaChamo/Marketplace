@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { NAV_LINKS } from '../constants';
 
 interface NavbarProps {
-  onNavigate: (page: 'home' | 'about' | 'all-categories') => void;
+  onNavigate: (page: 'home' | 'about' | 'all-categories' | 'advertise') => void;
   currentPage: string;
   onOpenRegister: () => void;
 }
@@ -24,6 +24,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage, onOpenRegister
     e.preventDefault();
     if (href === '#about') onNavigate('about');
     else if (href === '#categories') onNavigate('all-categories');
+    else if (href === '#advertise') onNavigate('advertise');
     else if (href === '#') onNavigate('home');
     setIsMobileMenuOpen(false);
   };
