@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import FeaturedSlider from './components/FeaturedSlider';
@@ -12,34 +12,34 @@ import AboutSection from './components/AboutSection';
 import Footer from './components/Footer';
 
 function App() {
+  const [currentPage, setCurrentPage] = useState<'home' | 'about'>('home');
+
+  // Faz o scroll para o topo sempre que mudar de "página"
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [currentPage]);
+
   return (
     <div className="min-h-screen bg-gray-50 selection:bg-orange-100 selection:text-orange-900 scroll-smooth">
-      <Navbar />
+      <Navbar onNavigate={(page: 'home' | 'about') => setCurrentPage(page)} currentPage={currentPage} />
       
-      <main>
-        {/* Banner Principal com Slide de Vídeos */}
-        <Hero />
-
-        {/* Slider de Empresas em Destaque */}
-        <FeaturedSlider />
-
-        {/* Categorias Segmentadas */}
-        <Categories />
-
-        {/* Secção de Publicidade Outdoor */}
-        <AdSection />
-
-        {/* Secção Faça Parte / Call to Action */}
-        <JoinSection />
-
-        {/* Porquê escolher a Mozconect */}
-        <WhyChooseUs />
-
-        {/* Sobre Nós / Institucional */}
-        <AboutSection />
-
-        {/* Planos e Preços */}
-        <PricingSection />
+      <main className="transition-all duration-500">
+        {currentPage === 'home' ? (
+          <>
+            {/* Conteúdo da Home Page */}
+            <Hero />
+            <FeaturedSlider />
+            <Categories />
+            <AdSection />
+            <JoinSection />
+            <WhyChooseUs />
+            <PricingSection />
+          </>
+        ) : (
+          <div className="pt-20"> {/* Espaçamento para a Navbar fixa */}
+            <AboutSection onBack={() => setCurrentPage('home')} />
+          </div>
+        )}
       </main>
 
       <Footer />
