@@ -105,8 +105,8 @@ const AdvertisePage: React.FC<AdvertisePageProps> = ({ onBack, onOpenRegister, o
         </div>
       )}
 
-      {/* Banner de Vídeo Grande (Showcase) - Altura aumentada com padding de 50px */}
-      <section className="relative min-h-[85vh] w-full overflow-hidden flex items-center py-[50px]">
+      {/* Banner de Vídeo Grande (Showcase) - Altura min-h-[90vh] e Padding py-[50px] */}
+      <section className="relative min-h-[90vh] w-full overflow-hidden flex items-center py-[50px]">
         <video 
           key={activeVideo}
           autoPlay muted loop playsInline 
@@ -120,27 +120,28 @@ const AdvertisePage: React.FC<AdvertisePageProps> = ({ onBack, onOpenRegister, o
           <div className="container mx-auto">
             <button 
               onClick={onBack}
-              className="mb-8 flex items-center gap-2 text-white/60 hover:text-orange-500 font-black uppercase text-[10px] tracking-[0.3em] transition-all group"
+              className="mb-10 flex items-center gap-2 text-white/60 hover:text-orange-500 font-black uppercase text-[10px] tracking-[0.3em] transition-all group"
             >
               <svg className="w-4 h-4 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
               </svg>
               Voltar ao Marketplace
             </button>
-            <span className="text-orange-500 font-black uppercase tracking-[0.5em] text-[10px] block mb-4">Espaço Publicitário Premium</span>
-            <h1 className="text-5xl md:text-8xl font-black text-white leading-tight tracking-tighter mb-8 drop-shadow-2xl max-w-5xl">
-              Destaque a sua Marca <br /> no Coração do Negócio
+            <span className="text-orange-500 font-black uppercase tracking-[0.5em] text-[10px] block mb-6">Espaço Publicitário Premium</span>
+            <h1 className="text-5xl md:text-8xl font-black text-white leading-tight tracking-tighter mb-12 drop-shadow-2xl max-w-7xl">
+              <span className="whitespace-nowrap">Destaque a sua Marca</span> <br /> 
+              <span className="text-orange-600 whitespace-nowrap">no Coração do Negócio</span>
             </h1>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-6">
               <button 
                 onClick={onOpenRegister}
-                className="bg-orange-600 hover:bg-orange-700 text-white px-10 py-4 rounded-2xl font-black uppercase tracking-widest text-xs transition-all shadow-2xl shadow-orange-600/20 active:scale-95 border-b-4 border-orange-800"
+                className="bg-orange-600 hover:bg-orange-700 text-white px-12 py-5 rounded-2xl font-black uppercase tracking-widest text-xs transition-all shadow-2xl shadow-orange-600/20 active:scale-95 border-b-4 border-orange-800"
               >
                 Reservar Meu Espaço
               </button>
               <button 
                 onClick={() => setShowPricing(true)}
-                className="bg-white/10 hover:bg-white/20 text-white backdrop-blur-xl border border-white/20 px-10 py-4 rounded-2xl font-black uppercase tracking-widest text-xs transition-all"
+                className="bg-white/10 hover:bg-white/20 text-white backdrop-blur-xl border border-white/20 px-12 py-5 rounded-2xl font-black uppercase tracking-widest text-xs transition-all"
               >
                 Ver Tabela de Preços
               </button>
@@ -150,12 +151,12 @@ const AdvertisePage: React.FC<AdvertisePageProps> = ({ onBack, onOpenRegister, o
       </section>
 
       {/* Seções de Anúncios Categorizados */}
-      <div className="container mx-auto px-6 -mt-20 relative z-20">
+      <div className="container mx-auto px-6 -mt-24 relative z-20">
         {AD_SECTORS.map((sector, sIdx) => (
           <div key={sIdx} className="mb-24">
             <div className="flex items-center justify-between mb-8 border-l-4 border-orange-600 pl-6">
               <div>
-                <h2 className="text-white text-3xl font-black tracking-tight">{sector.title}</h2>
+                <h3 className="text-white text-3xl font-black tracking-tight whitespace-nowrap">{sector.title}</h3>
                 <p className="text-gray-500 text-xs font-bold uppercase tracking-widest mt-1">Destaques verificados</p>
               </div>
               <button 
@@ -190,7 +191,7 @@ const AdvertisePage: React.FC<AdvertisePageProps> = ({ onBack, onOpenRegister, o
             {sIdx === 0 && (
               <div className="mt-16 bg-gradient-to-r from-orange-600 to-red-700 rounded-3xl p-8 flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl shadow-orange-900/20">
                 <div className="text-center md:text-left">
-                  <h3 className="text-white text-2xl font-black tracking-tighter mb-2 italic">Promoção Relâmpago de Anúncios!</h3>
+                  <h3 className="text-white text-2xl font-black tracking-tighter mb-2 italic whitespace-nowrap">Promoção Relâmpago de Anúncios!</h3>
                   <p className="text-orange-100 text-xs font-bold uppercase tracking-widest">50% de Desconto para Novos Parceiros em Maputo</p>
                 </div>
                 <button 
