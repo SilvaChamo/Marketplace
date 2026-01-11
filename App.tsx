@@ -69,22 +69,23 @@ function App() {
         )}
         
         {currentPage === 'about' && (
-          <div className="pt-20">
+          <div>
             <AboutSection onBack={() => setCurrentPage('home')} />
           </div>
         )}
 
         {currentPage === 'all-categories' && (
-          <div className="pt-20">
+          <div>
             <CategoriesPage 
               onBack={() => setCurrentPage('home')} 
               onCategoryClick={handleCategoryClick}
+              onOpenRegister={openRegister}
             />
           </div>
         )}
 
         {currentPage === 'category-detail' && selectedCategory && (
-          <div className="pt-20">
+          <div>
             <CategoryDetailPage 
               category={selectedCategory} 
               onBack={() => setCurrentPage('all-categories')} 
@@ -95,7 +96,7 @@ function App() {
         )}
 
         {currentPage === 'business-profile' && selectedBusiness && (
-          <div className="pt-20">
+          <div>
             <BusinessProfilePage 
               business={selectedBusiness} 
               onBack={() => setCurrentPage('category-detail')} 

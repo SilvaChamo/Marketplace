@@ -24,7 +24,7 @@ const BusinessCard: React.FC<{ biz: any; onBusinessClick: (biz: any) => void }> 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentImg((prev) => (prev + 1) % biz.images.length);
-    }, 4000 + Math.random() * 2000); // Random delay to make carousels not sync
+    }, 4000 + Math.random() * 2000); 
     return () => clearInterval(timer);
   }, [biz.images.length]);
 
@@ -33,7 +33,6 @@ const BusinessCard: React.FC<{ biz: any; onBusinessClick: (biz: any) => void }> 
       onClick={() => onBusinessClick(biz)}
       className="relative h-72 rounded-3xl overflow-hidden group cursor-pointer shadow-md hover:shadow-2xl transition-all duration-700"
     >
-      {/* Mini Carrossel de Produtos */}
       {biz.images.map((img: string, idx: number) => (
         <img 
           key={idx}
@@ -45,7 +44,6 @@ const BusinessCard: React.FC<{ biz: any; onBusinessClick: (biz: any) => void }> 
       
       <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/40 to-transparent"></div>
       
-      {/* Indicadores do Carrossel */}
       <div className="absolute top-4 left-1/2 -translate-x-1/2 flex gap-1 z-20">
         {biz.images.map((_: any, idx: number) => (
           <div 
@@ -94,43 +92,43 @@ const BusinessCard: React.FC<{ biz: any; onBusinessClick: (biz: any) => void }> 
 const CategoryDetailPage: React.FC<CategoryDetailPageProps> = ({ category, onBack, onOpenRegister, onBusinessClick }) => {
   return (
     <div className="animate-in fade-in zoom-in-95 duration-500 bg-gray-50 min-h-screen pb-24">
-      <div className="relative h-[40vh] overflow-hidden">
+      <div className="relative h-[50vh] min-h-[350px] overflow-hidden">
         <img src={category.image} className="w-full h-full object-cover" alt={category.name} />
         <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/40 to-transparent"></div>
-        <div className="absolute bottom-10 left-0 right-0">
+        <div className="absolute bottom-14 left-0 right-0">
           <div className="container mx-auto px-6">
             <button 
               onClick={onBack}
-              className="mb-6 flex items-center gap-2 text-white/70 hover:text-white font-bold transition-colors group"
+              className="mb-8 flex items-center gap-2 text-white/70 hover:text-white font-bold transition-colors group"
             >
               <svg className="w-5 h-5 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
               </svg>
               Todas as Categorias
             </button>
-            <div className="flex items-end gap-6">
-              <div className="text-6xl drop-shadow-2xl">{category.icon}</div>
-              <div>
-                <h1 className="text-4xl md:text-6xl font-black text-white tracking-tighter mb-2">{category.name}</h1>
-                <p className="text-orange-400 font-bold uppercase tracking-widest text-xs">{category.count} Empresas Encontradas</p>
+            <div className="flex items-end gap-8">
+              <div className="text-7xl md:text-8xl drop-shadow-2xl">{category.icon}</div>
+              <div className="mb-2">
+                <h1 className="text-4xl md:text-7xl font-black text-white tracking-tighter mb-2">{category.name}</h1>
+                <p className="text-orange-400 font-bold uppercase tracking-[0.3em] text-[10px] md:text-xs">{category.count} Empresas Encontradas</p>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="container mx-auto px-6 mt-12">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-10">
+      <div className="container mx-auto px-6 mt-16">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
           <div className="lg:col-span-1">
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 sticky top-24">
-              <h3 className="font-black text-gray-900 mb-4 uppercase tracking-tighter">Sobre esta Categoria</h3>
-              <p className="text-gray-500 text-sm leading-relaxed mb-6">
+            <div className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 sticky top-28">
+              <h3 className="font-black text-gray-900 mb-4 uppercase tracking-tighter text-lg">Sobre esta Categoria</h3>
+              <p className="text-gray-500 text-sm leading-relaxed mb-8">
                 {category.description}
               </p>
-              <div className="pt-6 border-t border-gray-50">
+              <div className="pt-8 border-t border-gray-50">
                 <button 
                   onClick={onOpenRegister}
-                  className="w-full bg-orange-600 text-white py-3 rounded-xl font-bold text-xs uppercase tracking-widest hover:bg-orange-700 transition-colors shadow-lg shadow-orange-600/20"
+                  className="w-full bg-orange-600 text-white py-4 rounded-xl font-black text-[10px] uppercase tracking-widest hover:bg-orange-700 transition-colors shadow-lg shadow-orange-600/20"
                 >
                   Anunciar aqui
                 </button>
@@ -139,10 +137,10 @@ const CategoryDetailPage: React.FC<CategoryDetailPageProps> = ({ category, onBac
           </div>
 
           <div className="lg:col-span-3">
-            <div className="flex justify-between items-center mb-8">
-              <h2 className="text-2xl font-black text-gray-900 tracking-tight">Empresas em Destaque</h2>
-              <div className="flex gap-2">
-                <select className="bg-white border border-gray-100 rounded-lg text-xs font-bold text-gray-500 px-4 py-2 shadow-sm outline-none">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-10 gap-4">
+              <h2 className="text-2xl md:text-3xl font-black text-gray-900 tracking-tight">Empresas em Destaque</h2>
+              <div className="flex gap-2 w-full sm:w-auto">
+                <select className="bg-white border border-gray-200 rounded-xl text-[10px] font-black uppercase tracking-widest text-gray-500 px-5 py-3 shadow-sm outline-none w-full sm:w-auto cursor-pointer hover:border-orange-500 transition-colors">
                   <option>Mais Relevantes</option>
                   <option>Melhor Classificadas</option>
                   <option>Mais Recentes</option>

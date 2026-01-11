@@ -105,12 +105,22 @@ const FeaturedSlider: React.FC = () => {
             <span className="text-orange-600 font-bold uppercase tracking-widest text-[10px]">Parceiros Premium</span>
             <h2 className="text-3xl md:text-4xl font-black text-gray-900 mt-2 tracking-tight">Destaques da Semana</h2>
           </div>
-          <div className="flex gap-2">
-            <button onClick={() => scroll('left')} className="w-10 h-10 bg-gray-400/20 text-black rounded-full flex items-center justify-center hover:bg-orange-600 hover:text-white transition-all shadow-sm active:scale-95">
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M15 19l-7-7 7-7" /></svg>
+          <div className="flex gap-3">
+            <button 
+              onClick={() => scroll('left')} 
+              className="w-12 h-12 bg-gray-900/70 text-white rounded-full flex items-center justify-center hover:bg-orange-600 transition-all shadow-xl active:scale-90 group"
+            >
+              <svg className="w-6 h-6 transform group-hover:-translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M15 19l-7-7 7-7" />
+              </svg>
             </button>
-            <button onClick={() => scroll('right')} className="w-10 h-10 bg-gray-400/20 text-black rounded-full flex items-center justify-center hover:bg-orange-600 hover:text-white transition-all shadow-sm active:scale-95">
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" /></svg>
+            <button 
+              onClick={() => scroll('right')} 
+              className="w-12 h-12 bg-gray-900/70 text-white rounded-full flex items-center justify-center hover:bg-orange-600 transition-all shadow-xl active:scale-90 group"
+            >
+              <svg className="w-6 h-6 transform group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" />
+              </svg>
             </button>
           </div>
         </div>
