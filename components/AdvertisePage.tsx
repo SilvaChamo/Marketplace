@@ -105,7 +105,7 @@ const AdvertisePage: React.FC<AdvertisePageProps> = ({ onBack, onOpenRegister, o
         </div>
       )}
 
-      {/* Banner de Vídeo Grande (Showcase) - Altura min-h-[90vh] e Padding py-[50px] */}
+      {/* Banner de Vídeo Grande (Showcase) - Título Atualizado */}
       <section className="relative min-h-[90vh] w-full overflow-hidden flex items-center py-[50px]">
         <video 
           key={activeVideo}
@@ -127,23 +127,23 @@ const AdvertisePage: React.FC<AdvertisePageProps> = ({ onBack, onOpenRegister, o
               </svg>
               Voltar ao Marketplace
             </button>
-            <span className="text-orange-500 font-black uppercase tracking-[0.5em] text-[10px] block mb-6">Espaço Publicitário Premium</span>
+            <span className="text-orange-500 font-black uppercase tracking-[0.5em] text-[10px] block mb-6">Marketplace Moçambique</span>
             <h1 className="text-5xl md:text-8xl font-black text-white leading-tight tracking-tighter mb-12 drop-shadow-2xl max-w-7xl">
-              <span className="whitespace-nowrap">Destaque a sua Marca</span> <br /> 
-              <span className="text-orange-600 whitespace-nowrap">no Coração do Negócio</span>
+              <span className="whitespace-nowrap">Digitalizando o comércio</span> <br /> 
+              <span className="text-orange-600 whitespace-nowrap">moçambicano</span>
             </h1>
             <div className="flex flex-wrap gap-6">
               <button 
                 onClick={onOpenRegister}
                 className="bg-orange-600 hover:bg-orange-700 text-white px-12 py-5 rounded-2xl font-black uppercase tracking-widest text-xs transition-all shadow-2xl shadow-orange-600/20 active:scale-95 border-b-4 border-orange-800"
               >
-                Reservar Meu Espaço
+                Anunciar Agora
               </button>
               <button 
                 onClick={() => setShowPricing(true)}
                 className="bg-white/10 hover:bg-white/20 text-white backdrop-blur-xl border border-white/20 px-12 py-5 rounded-2xl font-black uppercase tracking-widest text-xs transition-all"
               >
-                Ver Tabela de Preços
+                Planos Publicitários
               </button>
             </div>
           </div>
@@ -187,7 +187,7 @@ const AdvertisePage: React.FC<AdvertisePageProps> = ({ onBack, onOpenRegister, o
               ))}
             </div>
 
-            {/* Banner Mini entre secções (Opcional) */}
+            {/* Banner Mini entre secções */}
             {sIdx === 0 && (
               <div className="mt-16 bg-gradient-to-r from-orange-600 to-red-700 rounded-3xl p-8 flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl shadow-orange-900/20">
                 <div className="text-center md:text-left">

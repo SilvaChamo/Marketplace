@@ -7,30 +7,44 @@ interface AboutSectionProps {
 
 const AboutSection: React.FC<AboutSectionProps> = ({ onBack }) => {
   return (
-    <div className="animate-in fade-in slide-in-from-bottom-4 duration-700">
-      {/* 1. Secção Principal de História */}
-      <section id="about" className="pt-20 pb-32 bg-white overflow-hidden relative">
+    <div className="animate-in fade-in duration-700 bg-white">
+      {/* Banner de Topo - Estilo Página de Produtos */}
+      <div className="relative h-[45vh] min-h-[350px] overflow-hidden">
+        <img 
+          src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2000" 
+          className="w-full h-full object-cover" 
+          alt="Sobre o Marketplace" 
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/40 to-transparent"></div>
+        <div className="absolute bottom-10 left-0 right-0">
+          <div className="container mx-auto px-6">
+            {onBack && (
+              <button 
+                onClick={onBack}
+                className="mb-6 flex items-center gap-2 text-white/70 hover:text-white font-bold transition-colors group uppercase text-[9px] tracking-[0.2em]"
+              >
+                <svg className="w-4 h-4 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+                Voltar
+              </button>
+            )}
+            
+            <div className="max-w-4xl">
+              <span className="text-orange-500 font-black uppercase tracking-[0.4em] text-[10px] block mb-2">A Nossa Missão</span>
+              <h1 className="text-4xl md:text-6xl font-black text-white leading-[1.1] tracking-tighter drop-shadow-2xl">
+                Digitalizar o comércio <br /> 
+                <span className="text-orange-500">moçambicano!</span>
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Conteúdo Principal */}
+      <section id="about-content" className="py-24 bg-white overflow-hidden relative">
         <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-orange-50 rounded-full blur-[120px] -z-10 opacity-60"></div>
         <div className="container mx-auto px-6">
-          {onBack && (
-            <button 
-              onClick={onBack}
-              className="mb-12 flex items-center gap-2 text-gray-400 hover:text-orange-600 font-bold transition-colors group"
-            >
-              <svg className="w-5 h-5 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-              </svg>
-              Voltar para Início
-            </button>
-          )}
-
-          <div className="max-w-4xl mb-20">
-            <span className="text-orange-600 font-black uppercase tracking-[0.4em] text-xs block mb-4">A Nossa Jornada</span>
-            <h2 className="text-5xl md:text-6xl font-black text-gray-900 leading-[1.1] tracking-tighter">
-              Construindo a infraestrutura digital <br /> <span className="text-orange-600">para o comércio moçambicano.</span>
-            </h2>
-          </div>
-
           <div className="flex flex-col lg:flex-row items-center gap-20">
             <div className="w-full lg:w-1/2 relative">
               <div className="relative z-10">
@@ -71,7 +85,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ onBack }) => {
         </div>
       </section>
 
-      {/* 2. Secção Serviços */}
+      {/* Secção Serviços */}
       <section className="py-32 bg-orange-50/40">
         <div className="container mx-auto px-6 text-center">
           <span className="text-gray-400 font-black uppercase tracking-widest text-[9px] mb-4 block">Padrão de Excelência</span>
@@ -93,7 +107,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ onBack }) => {
         </div>
       </section>
 
-      {/* 3. Secção de Equipa */}
+      {/* Secção de Equipa */}
       <section className="py-32 bg-white">
         <div className="container mx-auto px-6">
           <div className="flex flex-col lg:flex-row items-center gap-24">
@@ -135,7 +149,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ onBack }) => {
         </div>
       </section>
 
-      {/* 4. Secção Final */}
+      {/* Secção Final */}
       <section className="py-32 bg-slate-50 relative">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-20">
