@@ -1,0 +1,25 @@
+[debug] [2026-01-11T16:29:24.634Z] ----------------------------------------------------------------------
+[debug] [2026-01-11T16:29:24.644Z] Command:       /usr/local/bin/node /usr/local/bin/firebase init
+[debug] [2026-01-11T16:29:24.645Z] CLI Version:   15.2.1
+[debug] [2026-01-11T16:29:24.645Z] Platform:      darwin
+[debug] [2026-01-11T16:29:24.645Z] Node Version:  v24.12.0
+[debug] [2026-01-11T16:29:24.645Z] Time:          Sun Jan 11 2026 18:29:24 GMT+0200 (Central Africa Time)
+[debug] [2026-01-11T16:29:24.646Z] ----------------------------------------------------------------------
+[debug] 
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /Users/macbook/Desktop/App/marketplace
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] 
