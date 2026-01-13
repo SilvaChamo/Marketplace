@@ -16,10 +16,13 @@ import AdvertisePage from './components/AdvertisePage';
 import Footer from './components/Footer';
 import RegisterModal from './components/RegisterModal';
 import QuoteModal from './components/QuoteModal';
+import UIShowcase from './components/UIShowcase';
 import { Category } from './types';
 
+type Page = 'home' | 'about' | 'all-categories' | 'category-detail' | 'business-profile' | 'advertise' | 'ui-demo';
+
 function App() {
-  const [currentPage, setCurrentPage] = useState<'home' | 'about' | 'all-categories' | 'category-detail' | 'business-profile' | 'advertise'>('home');
+  const [currentPage, setCurrentPage] = useState<Page>('home');
   const [selectedCategory, setSelectedCategory] = useState<Category | null>(null);
   const [selectedBusiness, setSelectedBusiness] = useState<any>(null);
   const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
@@ -118,6 +121,12 @@ function App() {
           </div>
         )}
       </main>
+
+      {currentPage === 'ui-demo' && (
+        <div>
+          <UIShowcase onBack={() => setCurrentPage('home')} />
+        </div>
+      )}
 
       <Footer onNavigate={handleNavigate} />
 

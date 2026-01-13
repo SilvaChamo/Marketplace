@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { NAV_LINKS } from '../constants';
 
 interface NavbarProps {
-  onNavigate: (page: 'home' | 'about' | 'all-categories' | 'advertise') => void;
+  onNavigate: (page: 'home' | 'about' | 'all-categories' | 'advertise' | 'ui-demo') => void;
   currentPage: string;
   onOpenRegister: () => void;
 }

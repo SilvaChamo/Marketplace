@@ -2,7 +2,7 @@
 import React from 'react';
 
 interface FooterProps {
-  onNavigate?: (page: 'home' | 'about' | 'all-categories' | 'advertise') => void;
+  onNavigate?: (page: 'home' | 'about' | 'all-categories' | 'advertise' | 'ui-demo') => void;
 }
 
 const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
@@ -61,6 +61,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               <li><a href="#" onClick={(e) => handleNav(e, 'advertise')} className="hover:text-white transition-colors font-medium">Publicidade</a></li>
               <li><a href="#" onClick={(e) => handleNav(e, 'about')} className="hover:text-white transition-colors font-medium">Sobre Nós</a></li>
               <li><a href="#pricing" onClick={(e) => handleAnchorLink(e, 'pricing')} className="hover:text-white transition-colors font-medium">Planos & Preços</a></li>
+                <li><a href="#" onClick={(e) => handleNav(e, 'ui-demo')} className="hover:text-white transition-colors font-medium">UI Demo</a></li>
             </ul>
           </div>
 
