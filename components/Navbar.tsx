@@ -53,7 +53,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage, onOpenRegister
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleLinkClick(e, link.href)}
-                className={`font-bold text-[13px] uppercase tracking-normal transition-all duration-300 hover:scale-105 ${
+                className={`font-medium text-[13px] uppercase tracking-normal transition-all duration-300 hover:scale-105 ${
                   shouldBeWhite ? 'text-gray-600 hover:text-orange-600' : 'text-white/80 hover:text-white'
                 } ${currentPage === link.href.replace('#', '') ? 'text-orange-600' : ''}`}
               >

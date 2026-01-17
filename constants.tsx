@@ -71,7 +71,7 @@ export const CATEGORIES: Category[] = [
 
 export const NAV_LINKS = [
   { name: 'Início', href: '#' },
+  { name: 'Sobre Nós', href: '#about' },
   { name: 'Categorias', href: '#categories' },
   { name: 'Publicidade', href: '#advertise' },
-  { name: 'Sobre Nós', href: '#about' },
 ];

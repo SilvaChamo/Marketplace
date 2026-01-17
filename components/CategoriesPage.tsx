@@ -12,8 +12,8 @@ interface CategoriesPageProps {
 const CategoriesPage: React.FC<CategoriesPageProps> = ({ onBack, onCategoryClick, onOpenRegister }) => {
   return (
     <div className="animate-in fade-in duration-700 bg-white min-h-screen pb-32">
-      {/* Banner de Topo - Estilo Mini com Título Atualizado */}
-      <div className="relative h-[40vh] min-h-[300px] overflow-hidden">
+      {/* Banner de Topo - Padronizado 400px */}
+      <div className="relative h-[400px] overflow-hidden">
         <img 
           src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=2000" 
           className="w-full h-full object-cover" 
@@ -32,13 +32,13 @@ const CategoriesPage: React.FC<CategoriesPageProps> = ({ onBack, onCategoryClick
               Voltar
             </button>
             
-            <div className="max-w-3xl">
+            <div className="max-w-4xl">
               <span className="text-orange-500 font-black uppercase tracking-[0.4em] text-[9px] block mb-2">Plataforma Marketplace</span>
-              <h2 className="text-4xl md:text-6xl font-black text-white leading-tight tracking-tighter drop-shadow-2xl mb-6">
-                Diretório Completo
+              <h2 className="text-4xl md:text-6xl font-black text-white leading-tight tracking-tighter drop-shadow-2xl mb-8">
+                Diretório completo das <br /> <span className="text-orange-500">empresas nacionais</span>
               </h2>
 
-              {/* Botões Ativos */}
+              {/* Botões Ativos Dentro do Banner */}
               <div className="flex flex-wrap gap-4 items-center">
                 <button 
                   onClick={onOpenRegister}
@@ -47,10 +47,10 @@ const CategoriesPage: React.FC<CategoriesPageProps> = ({ onBack, onCategoryClick
                   Anunciar na Rede
                 </button>
                 <button 
-                  onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })}
+                  onClick={() => window.scrollTo({ top: 400, behavior: 'smooth' })}
                   className="bg-white/10 hover:bg-white/20 text-white backdrop-blur-xl border border-white/30 px-8 py-3.5 rounded-xl font-black text-[10px] uppercase tracking-widest transition-all hover:border-white/60"
                 >
-                  Ajuda ao Usuário
+                  Explorar Agora
                 </button>
               </div>
             </div>
