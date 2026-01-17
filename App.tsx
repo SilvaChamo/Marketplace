@@ -26,8 +26,8 @@ function App() {
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [currentPage, selectedCategory, selectedBusiness]);
+    window.scrollTo({ top: 0, behavior: 'instant' as any });
+  }, [currentPage]);
 
   const openRegister = () => setIsRegisterModalOpen(true);
   const openQuote = (business?: any) => {
@@ -50,16 +50,16 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 selection:bg-orange-100 selection:text-orange-900 scroll-smooth">
+    <div className="min-h-screen bg-gray-50 selection:bg-orange-100 selection:text-orange-900">
       <Navbar 
         onNavigate={handleNavigate} 
         currentPage={currentPage}
         onOpenRegister={openRegister}
       />
       
-      <main className="transition-all duration-500">
+      <main className="pt-0 transition-opacity duration-500">
         {currentPage === 'home' && (
-          <>
+          <div className="animate-in fade-in duration-700">
             <Hero onOpenRegister={openRegister} onSeeCategories={() => setCurrentPage('all-categories')} />
             <FeaturedSlider />
             <Categories 
@@ -70,13 +70,11 @@ function App() {
             <JoinSection onOpenRegister={openRegister} />
             <WhyChooseUs />
             <PricingSection />
-          </>
+          </div>
         )}
         
         {currentPage === 'about' && (
-          <div>
-            <AboutSection onBack={() => setCurrentPage('home')} />
-          </div>
+          <AboutSection onBack={() => setCurrentPage('home')} />
         )}
 
         {currentPage === 'advertise' && (
@@ -88,34 +86,28 @@ function App() {
         )}
 
         {currentPage === 'all-categories' && (
-          <div>
-            <CategoriesPage 
-              onBack={() => setCurrentPage('home')} 
-              onCategoryClick={handleCategoryClick}
-              onOpenRegister={openRegister}
-            />
-          </div>
+          <CategoriesPage 
+            onBack={() => setCurrentPage('home')} 
+            onCategoryClick={handleCategoryClick}
+            onOpenRegister={openRegister}
+          />
         )}
 
         {currentPage === 'category-detail' && selectedCategory && (
-          <div>
-            <CategoryDetailPage 
-              category={selectedCategory} 
-              onBack={() => setCurrentPage('all-categories')} 
-              onOpenRegister={openRegister}
-              onBusinessClick={handleBusinessClick}
-            />
-          </div>
+          <CategoryDetailPage 
+            category={selectedCategory} 
+            onBack={() => setCurrentPage('all-categories')} 
+            onOpenRegister={openRegister}
+            onBusinessClick={handleBusinessClick}
+          />
         )}
 
         {currentPage === 'business-profile' && selectedBusiness && (
-          <div>
-            <BusinessProfilePage 
-              business={selectedBusiness} 
-              onBack={() => setCurrentPage('category-detail')} 
-              onOpenQuote={() => openQuote()}
-            />
-          </div>
+          <BusinessProfilePage 
+            business={selectedBusiness} 
+            onBack={() => setCurrentPage('category-detail')} 
+            onOpenQuote={() => openQuote()}
+          />
         )}
       </main>
 
